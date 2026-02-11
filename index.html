@@ -26,6 +26,7 @@
     width: 466px;
     height: 498px;
     border-radius: 10px;
+    transition: all 0.3s ease;
   }
 
   .message {
@@ -55,12 +56,12 @@
     animation: bounce 1s infinite alternate;
   }
 
-  .btn-yes:hover {
-    transform: scale(1.2);
-  }
-
   .btn-no {
     background-color: #ccc;
+  }
+
+  .btn-yes:hover {
+    transform: scale(1.2);
   }
 
   @keyframes bounce {
@@ -68,17 +69,43 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
   }
+
+  .bounce-strong {
+    animation: bounce-strong 0.5s infinite alternate;
+  }
+
+  @keyframes bounce-strong {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-25px) scale(1.5); }
+    100% { transform: translateY(0) scale(1); }
+  }
 </style>
 </head>
 <body>
   <div class="card">
-    <img src="minion-minion-loves.gif" alt="Minion Love">
+    <img id="minionGif" src="minion-minion-loves.gif" alt="Minion Love">
     <div class="message">Would u be my Valentine?</div>
     <div class="buttons">
-      <button class="btn btn-yes">Yes</button>
-      <button class="btn btn-no">No</button>
+      <button id="yesBtn" class="btn btn-yes">Yes</button>
+      <button id="noBtn" class="btn btn-no">No</button>
     </div>
   </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const gif = document.getElementById('minionGif');
+
+    yesBtn.addEventListener('click', () => {
+      gif.src = 'love.gif';
+    });
+
+    noBtn.addEventListener('click', () => {
+      yesBtn.classList.add('bounce-strong');
+      // убрать эффект через 1 сек, чтобы не бесконечно дергалось
+      setTimeout(() => yesBtn.classList.remove('bounce-strong'), 1000);
+    });
+  </script>
 </body>
 </html>
 
