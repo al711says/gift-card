@@ -1,67 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <title>Valentine Card</title>
 <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: url('minion-minion-loves.gif') no-repeat center center;
-        background-size: cover;
-        flex-direction: column;
-        text-align: center;
-        color: white;
-    }
-    h1 {
-        font-size: 3em;
-        text-shadow: 2px 2px 4px #000;
-        margin-bottom: 40px;
-    }
-    .buttons {
-        display: flex;
-        gap: 20px;
-    }
-    button {
-        padding: 15px 30px;
-        font-size: 1.5em;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    #yes {
-        background-color: #ff69b4;
-        color: white;
-    }
-    #no {
-        background-color: #fff;
-        color: #ff69b4;
-    }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fff0f5;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+  }
+
+  .card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: #ffe4e1;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    width: 466px;
+    height: 498px;
+    border-radius: 10px;
+  }
+
+  .message {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #d1477c;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-yes {
+    background-color: #ff69b4;
+    color: white;
+    animation: bounce 1s infinite alternate;
+  }
+
+  .btn-yes:hover {
+    transform: scale(1.2);
+  }
+
+  .btn-no {
+    background-color: #ccc;
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
-    <h1>Would u be my Valentine?</h1>
+  <div class="card">
+    <img src="minion-minion-loves.gif" alt="Minion Love">
+    <div class="message">Would u be my Valentine?</div>
     <div class="buttons">
-        <button id="yes">Yes</button>
-        <button id="no">No</button>
+      <button class="btn btn-yes">Yes</button>
+      <button class="btn btn-no">No</button>
     </div>
-
-<script>
-    const yesBtn = document.getElementById('yes');
-    const noBtn = document.getElementById('no');
-
-    noBtn.addEventListener('click', () => {
-        let currentWidth = yesBtn.offsetWidth;
-        yesBtn.style.width = (currentWidth + 20) + 'px';
-        yesBtn.style.fontSize = (parseInt(window.getComputedStyle(yesBtn).fontSize) + 2) + 'px';
-    });
-</script>
+  </div>
 </body>
 </html>
+
