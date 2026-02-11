@@ -1,67 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Открытка 💌</title>
-  <style>
+<meta charset="UTF-8">
+<title>Valentine Card</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
     body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      font-family: Arial, sans-serif;
-      text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url('minion-minion-loves.gif') no-repeat center center;
+        background-size: cover;
+        flex-direction: column;
+        text-align: center;
+        color: white;
     }
-
     h1 {
-      color: #fff;
-      margin-bottom: 20px;
+        font-size: 3em;
+        text-shadow: 2px 2px 4px #000;
+        margin-bottom: 40px;
     }
-
+    .buttons {
+        display: flex;
+        gap: 20px;
+    }
     button {
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 30px;
-      background: #fff;
-      color: #e75480;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 1.5em;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
-
-    button:hover {
-      transform: scale(1.05);
-      background: #ffe6ee;
+    #yes {
+        background-color: #ff69b4;
+        color: white;
     }
-
-    #msg {
-      display: none;
-      color: #fff;
-      font-size: 22px;
-      margin-top: 20px;
+    #no {
+        background-color: #fff;
+        color: #ff69b4;
     }
-  </style>
+</style>
 </head>
 <body>
+    <h1>Would u be my Valentine?</h1>
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
 
-  <h1>Для тебя 💖</h1>
+<script>
+    const yesBtn = document.getElementById('yes');
+    const noBtn = document.getElementById('no');
 
-  <!-- Гифка с Tenor -->
-  <div class="tenor-gif-embed" data-postid="10586631440146974859" data-share-method="host" data-aspect-ratio="0.935743" data-width="300">
-    <a href="https://tenor.com/view/minion-minion-loves-loves-love-i-love-you-gif-10586631440146974859">Minion Minion Loves GIF</a>
-  </div>
-  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-  <!-- Кнопка -->
-  <button onclick="document.getElementById('msg').style.display='block'">
-    Нажми меня
-  </button>
-
-  <p id="msg">Ты очень важный человек ✨</p>
-
+    noBtn.addEventListener('click', () => {
+        let currentWidth = yesBtn.offsetWidth;
+        yesBtn.style.width = (currentWidth + 20) + 'px';
+        yesBtn.style.fontSize = (parseInt(window.getComputedStyle(yesBtn).fontSize) + 2) + 'px';
+    });
+</script>
 </body>
 </html>
