@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Открытка 💌</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #e75480;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ffe6ee;
+    }
+
+    #msg {
+      display: none;
+      color: #fff;
+      font-size: 22px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Для тебя 💖</h1>
+
+  <!-- Гифка с Tenor -->
+  <div class="tenor-gif-embed" data-postid="10586631440146974859" data-share-method="host" data-aspect-ratio="0.935743" data-width="300">
+    <a href="https://tenor.com/view/minion-minion-loves-loves-love-i-love-you-gif-10586631440146974859">Minion Minion Loves GIF</a>
+  </div>
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+  <!-- Кнопка -->
+  <button onclick="document.getElementById('msg').style.display='block'">
+    Нажми меня
+  </button>
+
+  <p id="msg">Ты очень важный человек ✨</p>
+
+</body>
+</html>
